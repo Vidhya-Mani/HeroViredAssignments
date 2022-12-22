@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>DocDemo</title>
+    <style>
+        h1{
+            color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id ="add">
+    <button onclick="hello()">Click Me</button>
+    <h1 id="1">Heading Text</h1>
+    <script>
+        function hello(){
+            value = document.getElementById("1");
+            value.innerHTML="VIDHYA MANI";
+            var e1 = document.createElement("h1");
+            var text1 = document.createTextNode("Student of Hero Vired");
+            e1.appendChild(text1);
+            let appendDiv = document.getElementById("add");
+            document.body.appendChild(e1,appendDiv);
+        }    
+    </script>
+    </div>
+
+
+
+
+    <!-- <h1 id="one">Hello World</h1>
+    <button onclick="f1()">Click</button>
+    <script>
+        function f1(){
+            const heading=document.getElementById("one")
+            alert(heading.innerHTML)
+            alert(heading.style.color)
+            heading.innerHTML="Vidhya Mani"
+            heading.style.color="blue"
+            heading.style.fontSize="50px"
+
+        } -->
+
+
+    </script>
+</body>
+</html>
