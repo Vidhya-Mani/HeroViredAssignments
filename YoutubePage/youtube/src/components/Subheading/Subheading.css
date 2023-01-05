@@ -1,0 +1,32 @@
+.subheading{
+    height:6%;
+    width:100%;
+    background-color:white;
+    display: flex;
+    /* overflow-block: visible; */
+    /* flex-wrap: wrap; */
+    /* padding:5px; */
+    /* align-items: center; */
+    
+}
+.items{
+    display:flex;
+    margin-left:15px;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: red; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.items>div{
+    margin:8px;
+    background-color:#d3d3d3;
+    padding:3px;
+    border-radius:3px;
+    cursor:pointer;
+}
+.items>.all{
+    background-color:#030303;
+    color:white;
+}
