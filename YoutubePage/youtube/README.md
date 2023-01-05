@@ -1,3 +1,22 @@
+# Implemented Youtube Landing Page using React JS. 
+The components include heading ->called in App.js, subheading, sidebar, container--> called in content.js --> App.js 
+
+### Heading
+when mouse enters on icons - Voice search, Create, Notifications and Profile photo --> display alert messages.
+Search bar and icon is enclosed inside single container.Pointer is cursor for logo and re-order icon.
+
+### Sidebar
+cursor is default for Subscription and Explore.
+Pointer cursor for others icons and when mouse enters---> change in background color. Scroll bar to display complete list.
+
+### Subheading
+when mouse enters on all icons --> pointer is cursor and will change the background color. 
+
+### Body
+When the mouse enters on thumbnail --> border radius changes with black border color. 
+Clicking on the images will route to my repective videos.
+This is done with anchor and href tags.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
