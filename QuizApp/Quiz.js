@@ -1,106 +1,107 @@
-const quizArr =[
-    {
-        q: "Who is Ponniyin Selvan?",
-        a: "Aditya Karikalan",
-        b: "Parthiban",
-        c: "Raja Raja Cholan",
-        d: "Vanthiya Devan",
-        correct: "c"
-    },
-    {
-        q: "Who killed Baahubali?",
-        a: "Kattappa",
-        b: "Rajamatha",
-        c: "Balval Devan",
-        d: "Kaalakeya",
-        correct: "a"
-    },
-    {
-        q: "Which movie is based on Kolar Gold Mines?",
-        a: "Pettai",
-        b: "Big Brother",
-        c: "Dhrishyam",
-        d: "KGF",
-        correct: "d"
-    },
-    {
-        q: "Who is the male lead in movie Pushpa?",
-        a: "Prabhas",
-        b: "Allu Arjun",
-        c: "Junior NTR",
-        d: "Ram Charan",
-        correct: "b"
-    },
-    {
-        q: "What is the native language of movie Kantara?",
-        a: "Tamil",
-        b: "Kannada",
-        c: "Malayalam",
-        d: "Telugu",
-        correct: "b"
-    }
-];
-
-
 let questNo = 0;
 let score = 0;
 
+const a_value = document.getElementById("a_opt");
+const b_value = document.getElementById("b_opt");
+const c_value = document.getElementById("c_opt");
+const d_value = document.getElementById("d_opt");
+const submit1 = document.querySelector("button");
 const quizel = document.querySelector("div");
 const qel = document.querySelector("h1");
 const allans = document.querySelectorAll('.answer');
-const a_text = document.getElementById("a_opt");
-const b_text = document.getElementById("b_opt");
-const c_text = document.getElementById("c_opt");
-const d_text = document.getElementById("d_opt");
-const sbtBtn = document.querySelector("button");
 
 
-loadQuiz()
+const quizArr =[
+    {
+        q: "Who is Ponniyin Selvan?",
+        option1: "Aditya Karikalan",
+        option2: "Parthiban",
+        option3: "Raja Raja Cholan",
+        option4: "Vanthiya Devan",
+        answers: "c"
+    },
+    {
+        q: "Who killed Baahubali?",
+        option1: "Kattappa",
+        option2: "Rajamatha",
+        option3: "Balval Devan",
+        option4: "Kaalakeya",
+        answers: "a"
 
-function loadQuiz(){
+    },
+    {
+        q: "Which movie is based on Kolar Gold Mines?",
+        option1: "Pettai",
+        option2: "Big Brother",
+        option3: "Dhrishyam",
+        option4: "KGF",
+        answers: "d"
+    },
+    {
+        q: "Who is the male lead in movie Pushpa?",
+        option1: "Prabhas",
+        option2: "Allu Arjun",
+        option3: "Junior NTR",
+        option4: "Ram Charan",
+        answers: "b"
+    },
+    {
+        q: "What is the native language of movie Kantara?",
+        option1: "Tamil",
+        option2: "Kannada",
+        option3: "Malayalam",
+        option4: "Telugu",
+        answers: "b"
+    }
+];
+
+function removeAnswers(){
+    allans.forEach(ans => {ans.checked=false})
+}
+
+function callingQuiz(){
     removeAnswers()
 
     const quizNo = quizArr[questNo]
 
     qel.innerText = quizNo.q
-    a_text.innerText = quizNo.a
-    b_text.innerText = quizNo.b
-    c_text.innerText = quizNo.c
-    d_text.innerText = quizNo.d
+    a_value.innerText = quizNo.option1
+    b_value.innerText = quizNo.option2
+    c_value.innerText = quizNo.option3
+    d_value.innerText = quizNo.option4
 
 }
 
-function removeAnswers(){
-    allans.forEach(ael => {ael.checked=false})
-}
 
-
-sbtBtn.addEventListener('click',check)
+callingQuiz()
 
 function selectedKey(){
     let selected
-    allans.forEach(ael => {
-        if(ael.checked){
-            selected =  ael.id
+    allans.forEach(ans => {
+        if(ans.checked){
+            selected =  ans.id
         }
     })
     return selected
     
 }
 
+submit1.addEventListener('click',check)
+
 function check(){
     const selected = selectedKey()
     if(selected){
-        if(selected === quizArr[questNo].correct){
+        if(selected === quizArr[questNo].answers){
             score++
         }
 
         questNo++
 
         if(questNo < quizArr.length){
-            loadQuiz()
+            callingQuiz()
 
-        }else{
+        }
+        else{
             quizel.innerHTML = `
             <h3> You answered ${score}/${quizArr.length} questions correctly</h3>
 
