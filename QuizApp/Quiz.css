@@ -52,7 +52,7 @@ ul>li{
 button{
     background-color:blueviolet;
     color:white;
-    display:block;
+    /*display:block;*/
     width:100%;
     font-size: x-large;
     height:170%;
